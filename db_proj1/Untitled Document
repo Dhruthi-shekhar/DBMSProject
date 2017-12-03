@@ -1,0 +1,52 @@
+<?php
+	session_start();
+    require 'dbconfig/config.php';
+?>
+<!DOCTYPE html>
+<html>
+<head>
+<h2>Trains from your start station to destination</h2>
+<style>
+h2 {
+    color: black;
+    font-family:courier ;
+    font-size: 200%;
+    text-align:center;
+}
+table  {
+    color: blue;
+    font-family: verdana;
+    font-size: 100%;
+    font-style:oblique;
+text-align:center;
+}
+</style>
+
+</head>
+<body>
+
+ <table>
+            <tr><th>TRAIN ID</th><th>UP TIME</th><th>DOWNTIME</th><th>FARE*</th></tr>
+ <?php
+    $src_id=$_GET['source'];
+    $dest_id=$_GET['destination'];
+    
+    
+    $train_info="select * from TRAIN where Source_Station='$src_id' and Destination_Station = '$dest_id'";
+    $result = mysqli_query($con,$train_info);
+
+    
+
+    while($row= mysqli_fetch_array($result)){
+            echo $row["Train_ID"];
+            echo $row["Train_Name"];
+            echo $row["Seats_Class1"];
+    }
+?>           
+        </table> 
+        <form class="myform" action="enter_pass_details.php" method="get">
+        <label><b>TRAIN NUMBER:</b></label><br><br>
+    <input name="train_id" type="text" class="inputvalues" placeholder="type your train number"/><br>
+    <a href="enter_pass_details.php"><input name="submit" type="submit" id="login_btn" value="BOOK"/></a><br><br>
+</body>
+</html>

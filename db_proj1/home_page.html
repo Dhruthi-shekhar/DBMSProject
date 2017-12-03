@@ -1,0 +1,100 @@
+<html>
+<head>
+ <title>WELCOME</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+h1 {
+    color: black;
+    font-family:courier ;
+    font-size: 300%;
+    text-align:center;
+}
+p  {
+    color: blue;
+    font-family: verdana;
+    font-size: 160%;
+    font-style:oblique;
+text-align:center;
+}
+div  {
+    color: blue;
+    font-family: verdana;
+    font-size: 160%;
+    font-style:oblique;
+text-align:center;
+}
+body {
+background-color:#ADD8E6;
+   /*background-image:url("SA-blue-train-exterior.jpg");
+     */background-repeat: no-repeat;
+background-position: 50% 30%;
+}
+img {
+    
+    height: auto;
+	display: block;
+    margin: center;
+    width: 30%;
+    top:0.5%;
+	right:80%;
+	padding-top: 1px;
+  padding-right:8px;
+  padding-bottom: 2px;
+  padding-left: 450px;
+}
+a:link, a:visited {
+    
+    color: white;
+    padding: 14px 25px;
+    text-align: bottom;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:hover, a:active {
+    color: red;
+}
+</style>
+<h1>RAILWAY TICKET RESERVATION</h1>
+</head>
+<body>
+<p >Welcome to Indian Railways</p>
+<img class="mySlides" src="SA-blue-train-exterior.jpg" align="middle" display:block;margin:0 auto>
+<img class="mySlides" src="indian-railways-640x420.jpg" align="midle" display:block;margin:0 auto>
+
+<script type="text/javascript">
+  var slideIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > x.length) {slideIndex = 1}
+    x[slideIndex-1].style.display = "block";
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
+
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+		    <li>
+                        <a href="enter_stationnames.php">Book Tickets</a>
+                    </li>
+                    <li>
+                        <a href="check_det.php">Check status</a>
+                    </li>
+		    <li>
+                        <a href="delete_ticket.php">Cancel Ticket</a>
+                    </li>
+                </ul>
+            </div>
+</form>
+</body>
+</html>
